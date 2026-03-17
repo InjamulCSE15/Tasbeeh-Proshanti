@@ -40,10 +40,11 @@ A modern, high-performance **Progressive Web App (PWA)** built to provide a seam
 │   └── counter/[id].tsx   # Dynamic counting route
 └── static/
     └── assets/            # Visual assets & cinematic backgrounds
+```
 
 # Preview
-
-
+![Tasbeeh Proshanti App Preview](https://github.com/InjamulCSE15/Tasbeeh-Proshanti/blob/main/static/assets/images/tasbeeh-proshanti-preview.png)
+<a href='https://injamulcse15.github.io/ngScoreBoard/'>View Live Demo</a>
 
 # Getting Started
 
@@ -56,6 +57,5 @@ Make sure to install Deno: https://deno.land/manual/getting_started/installation
 
 Then start the project:
 
-```
-deno task start
+```deno task start
 ```
