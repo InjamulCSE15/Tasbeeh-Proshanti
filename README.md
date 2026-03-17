@@ -44,7 +44,7 @@ A modern, high-performance **Progressive Web App (PWA)** built to provide a seam
 
 # Preview
 ![Tasbeeh Proshanti App Preview](https://github.com/InjamulCSE15/Tasbeeh-Proshanti/blob/main/static/assets/images/tasbeeh-proshanti-preview.png)
-<a href='https://injamulcse15.github.io/ngScoreBoard/'>View Live Demo</a>
+<a href='https://tasbeeh-proshanti.injamulcse15.deno.net/'>View Live Demo</a>
 
 # Getting Started
 
