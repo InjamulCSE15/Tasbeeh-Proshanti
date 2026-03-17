@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import { useEffect, useRef } from "preact/hooks";
 
 export default function CounterTasbeeh({ target }: { target: number }) {
   const count = useSignal(0);
@@ -6,10 +7,33 @@ export default function CounterTasbeeh({ target }: { target: number }) {
   const showAlert = useSignal(false);
   const percentage = () => (count.value / target) * 100;
 
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // In Fresh, 'static' is the root, so we omit 'static' from the path
+    const soundPath = "/assets/sounds/tap.mp3";
+    audioRef.current = new Audio(soundPath);
+    audioRef.current.preload = "auto";
+
+    // Debugging: This will tell you if the path is wrong
+    audioRef.current.onerror = () => {
+      console.error(`Fresh could not find the sound file at: ${soundPath}. Check your static folder!`);
+    };
+  }, []);
+
   const handleTap = () => {
     if (count.value < target) {
       count.value++;
-
+      // Play sound
+      if (audioRef.current) {
+        // Stop any currently playing sound and start from beginning
+        audioRef.current.pause(); 
+        audioRef.current.currentTime = 0;
+        
+        audioRef.current.play().catch((err) => {
+          console.warn("Playback blocked or failed:", err);
+        });
+      }
       // Haptic feedback
       if (typeof window !== "undefined" && navigator.vibrate) {
         navigator.vibrate(50);
@@ -94,8 +118,8 @@ export default function CounterTasbeeh({ target }: { target: number }) {
 
       {/* Main Counter UI */}
       <div class="px-6 py-2 bg-emerald-800/40 rounded-full border border-emerald-500/30">
-           <span class="font-bengali text-emerald-200">লক্ষ্য: {target} বার</span>
-        </div>
+        <span class="font-bengali text-emerald-200">লক্ষ্য: {target} বার</span>
+      </div>
       <div
         onClick={handleTap}
         class="my-6 lg:my-0 relative w-64 h-64 flex items-center justify-center cursor-pointer active:scale-95 transition-transform"
@@ -128,19 +152,19 @@ export default function CounterTasbeeh({ target }: { target: number }) {
           <p class="text-white/40 font-bengali">ট্যাপ করুন</p>
         </div>
       </div>
-      {
-        count.value > 0 &&
-      <button
-        class="font-bengali group relative inline-block text-sm font-medium text-white"
-        onClick={confirmReset}
-      >
-        <span class="absolute inset-0 border rounded-full border-red-600">
-        </span>
-        <span class="block border rounded-full border-red-600 bg-red-600 px-12 py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1">
-          রিসেট করুন
-        </span>
-      </button>
-      }
+      {count.value > 0 &&
+        (
+          <button
+            class="font-bengali group relative inline-block text-sm font-medium text-white"
+            onClick={confirmReset}
+          >
+            <span class="absolute inset-0 border rounded-full border-red-600">
+            </span>
+            <span class="block border rounded-full border-red-600 bg-red-600 px-12 py-3 transition-transform group-hover:-translate-x-1 group-hover:-translate-y-1">
+              রিসেট করুন
+            </span>
+          </button>
+        )}
     </div>
   );
 }
