@@ -26,8 +26,8 @@ export default function TasbeehList() {
               <span
                 class={`text-xs font-semibold px-2 py-1 rounded-full ${
                   selectedId.value === zikir.id
-                    ? "bg-yellow-400 text-slate-700"
-                    : "bg-white/60 backdrop-blur-sm text-slate-800"
+                    ? "bg-green-400 text-slate-700"
+                    : "bg-white/80 backdrop-blur-sm text-slate-800"
                 }`}
               >
                 <span class="font-bengali">লক্ষ্য:</span> {zikir.target}
@@ -38,7 +38,7 @@ export default function TasbeehList() {
             </div>
             <h2
               class={`text-xl font-bold font-bengali ${
-                selectedId.value === zikir.id ? "text-white" : "text-yellow-400"
+                selectedId.value === zikir.id ? "text-white" : "text-green-500"
               }`}
             >
               {zikir.latin}
@@ -54,7 +54,7 @@ export default function TasbeehList() {
         <div class="flex justify-center mt-10">
           <a
             href={`/counter/${selectedId.value}`}
-            class="w-full sm:w-1/3 py-4 bg-yellow-600 text-white font-bold rounded-full text-center shadow-xl font-bengali animate-pulse"
+            class="w-full sm:w-1/3 py-4 bg-green-600 text-white font-bold rounded-full text-center shadow-xl font-bengali animate-pulse"
           >
             জিকির শুরু করুন
           </a>

@@ -45,7 +45,7 @@ export default function Navmenu({ activePath = "/" }: NavProps) {
 
       {/* Mobile Dock (Bottom) */}
       <div class="block lg:hidden">
-        <div class="dock dock-md bg-blue-900/80 text-white backdrop-blur-md z-50 border-t border-white/10">
+        <div class="dock dock-md bg-green-500/30 text-white backdrop-blur-md z-50 ">
           
           <a href="/" class={getDockClass("/")}>
             <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
