@@ -11,7 +11,6 @@ import * as $list from "./routes/list.tsx";
 import * as $CounterTasbeeh from "./islands/CounterTasbeeh.tsx";
 import * as $TasbeehList from "./islands/TasbeehList.tsx";
 import * as $Translate from "./islands/Translate.tsx";
-import * as $themeToggler from "./islands/themeToggler.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -27,7 +26,6 @@ const manifest = {
     "./islands/CounterTasbeeh.tsx": $CounterTasbeeh,
     "./islands/TasbeehList.tsx": $TasbeehList,
     "./islands/Translate.tsx": $Translate,
-    "./islands/themeToggler.tsx": $themeToggler,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
