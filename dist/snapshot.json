@@ -1,0 +1,48 @@
+{
+  "build_id": "986278f5766a091d6f4ede2f83f6116e4dad6100",
+  "files": {
+    "main.js": [
+      "chunk-GI7LLYGM.js",
+      "chunk-JP5XG2OT.js"
+    ],
+    "deserializer.js": [],
+    "signals.js": [
+      "chunk-OGGH7CYT.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-G4CPWP5O.js",
+      "chunk-JP5XG2OT.js"
+    ],
+    "island-countertasbeeh.js": [
+      "chunk-OGGH7CYT.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-BYRZ2NRM.js",
+      "chunk-G4CPWP5O.js",
+      "chunk-JP5XG2OT.js"
+    ],
+    "island-tasbeehlist.js": [
+      "chunk-OGGH7CYT.js",
+      "chunk-GI7LLYGM.js",
+      "chunk-BYRZ2NRM.js",
+      "chunk-G4CPWP5O.js",
+      "chunk-JP5XG2OT.js"
+    ],
+    "chunk-OGGH7CYT.js": [
+      "chunk-G4CPWP5O.js",
+      "chunk-JP5XG2OT.js"
+    ],
+    "chunk-GI7LLYGM.js": [],
+    "island-translate.js": [
+      "chunk-BYRZ2NRM.js",
+      "chunk-G4CPWP5O.js",
+      "chunk-JP5XG2OT.js"
+    ],
+    "chunk-BYRZ2NRM.js": [
+      "chunk-JP5XG2OT.js"
+    ],
+    "chunk-G4CPWP5O.js": [
+      "chunk-JP5XG2OT.js"
+    ],
+    "chunk-JP5XG2OT.js": [],
+    "metafile.json": []
+  }
+}
